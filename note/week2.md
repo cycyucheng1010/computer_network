@@ -6,3 +6,4 @@
 * ```config```: configuration mode
 * ```conf t```:configure terminal
 * line vty 
+* 第一個封包失敗，因為做arp解析。 ```show arp ``` 
