@@ -34,7 +34,25 @@ do show ip int brief
 192.168.2.1 255.255.255.0 192.168.2.254
 
 ```
-ip dhcp pool 名字
+## 實驗二
+### 設定dhcp in router
+```
+ip dhcp pool mypool
+netwrok 192.168.1.0 255.255.255.0
+default-router 192.168.1.254 
+dns-server 8.8.8.8
+dns-server exclude 192.168.1.250 192.168.1.254 (排除一些不想分配出去的ip)
+
+ip dhcp pool mypoo2
+netwrok 192.168.2.0 255.255.255.0
+default-router 192.168.2.254
+dns-server 8.8.8.8
+dns-server exclude 192.168.2.250 192.168.2.254
+```
+```
+ PC : ip dhcp
+
+```
 ## 實驗三
 1. 設定本機帳號
 ```
