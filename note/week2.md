@@ -34,3 +34,4 @@ do show ip int brief
 192.168.2.1 255.255.255.0 192.168.2.254
 
 ```
+ip dhcp pool 名字
