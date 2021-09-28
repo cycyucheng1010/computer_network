@@ -19,7 +19,7 @@ conf t
 int e0/1
 ip addr 192.168.1.254 255.255.255.0
 no shut 
-int e0/2
+int e0/0
 ip addr 192.168.2.254 255.255.255.0
 no shut 
 do show ip int brief
