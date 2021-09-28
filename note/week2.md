@@ -6,4 +6,8 @@
 * ```config```: configuration mode
 * ```conf t```:configure terminal
 * line vty 
-* 第一個封包失敗，因為做arp解析。 ```show arp ``` 
+* 第一個封包失敗，因為做arp解析。 ```show arp ```
+## CISCO 設備
+* NVRAM :start up cinfiguration file
+* RAM : runing configuration
+* Flash : OS
