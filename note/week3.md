@@ -21,3 +21,51 @@ sudo chmod 777 /var/lib/tftpboot
 * [[CentOS 7] 檔案傳輸界的隱形冠軍 - TFTP 伺服器](http://blog.itist.tw/2016/09/install-a-tftp-server-on-centos-7.html)
 ## 實驗一
 * 可直接對序列阜，因為serial一對一
+```
+# R1
+enable
+configure terminal
+hostname R1
+intreface s1/0
+ip addr 12.1.1.1 255.255.255.0
+no shutdown
+
+# R2
+enable
+configure terminal
+hostname R2
+intreface s1/0
+ip addr 12.1.1.2 255.255.255.0
+no shutdown
+interface s1/1
+ip addr 23.1.1.2 255.255.255.0
+no shutdown
+
+# R3
+enable
+configure terminal
+hostname R3
+intreface s1/0
+ip addr 23.1.1.3 255.255.255.0
+no shutdown
+
+# R1
+router ospf 1
+network 12.1.1.0 0.0.0.255 area 0
+
+# R2
+router ospf 1
+network 12.1.1.0 0.0.0.255 area 0
+network 23.1.1.0 0.0.0.255 area 0
+
+# R3
+router ospf 1
+network 23.1.1.0 0.0.0.255 area 0
+
+# R1
+ping 12.1.1.2 # 此時應該會 ping 通
+
+#R3
+ping 12.1.1.1 # 此時應該會ping 通
+
+```
