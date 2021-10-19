@@ -1,4 +1,4 @@
-# 20211005
+# 2021.10.05
 ## TFTP
 * 簡單檔案傳輸協定也稱小型檔案傳輸協定（Trivial File Transfer Protocol, TFTP）。
 * 透過少量記憶體就能輕鬆實現
