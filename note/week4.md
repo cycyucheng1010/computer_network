@@ -1,4 +1,4 @@
-# 20211019 
+# 2021.10.19 
 ## port forwarding
 * 當有從外部進來的需求被送到路由器時，這個需求會依據他的通訊協定（例如網頁 http），或是使用者指定的 Port 號碼，由路由器將這個需求依照 Port 號碼送到指定的裝置去。
 ![image](https://user-images.githubusercontent.com/62127656/137851100-e199c9ff-4d57-4c73-a706-6f95c8eb8cd7.png)
