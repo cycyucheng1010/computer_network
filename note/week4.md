@@ -7,5 +7,61 @@
 
 ![image](https://user-images.githubusercontent.com/62127656/137854586-590eb5fa-f92b-4ebb-aaa0-0ab4e63bbcd9.png)
 ![image](https://user-images.githubusercontent.com/62127656/137855277-53f7a3ac-5d6c-44c6-bc45-454f400ceb6f.png)
+### 實驗一
+* r1
+```
+Router>en
+Router#conf t
+Router(config)#hostname r1
+r1(config)#int e0/0
+r1(config-if)#ip addr 12.1.1.1 255.255.255.0
+r1(config-if)#no shut
+r1(config-if)#exit
+r1(config)#router rip
+r1(config-router)#network 12.0.0.0
+r1(config-router)#do show ip int brief
+r1(config)#do show ip route
+r1(config)#exit
+----等r2 r3設置完成 ----
+r1#ping 23.1.1.3
+
+```
+* r2
+```
+Router>en
+Router#conf t
+Router(config)#hostname r2
+r2(config)#int e0/0
+r2(config-if)#ip addr 12.1.1.2 255.255.255.0
+r2(config-if)#no shut
+r2(config-if)#int
+r2(config-if)#int e0/1
+r2(config-if)#ip addr 23.1.1.2 255.255.255.0
+r2(config-if)#no shut
+r2(config-if)#exit
+r2(config)#router rip
+r2(config-router)#network 12.0.0.0
+r2(config-router)#network 23.0.0.0
+r2(config-router)#do show ip int brief
+```
+* r3
+```
+Router>en
+Router#conf t
+Router(config)#hostname r3
+r3(config)#int e0/0
+r3(config-if)#ip addr 23.1.1.3 255.255.255.0
+r3(config-if)#no shut
+r3(config-if)#exit
+r3(config)#router rip
+r3(config-router)#network 23.0.0.0
+r3(config)#do show ip route
+```
+
+![image](https://user-images.githubusercontent.com/62127656/137866211-9ee1ff2b-f9aa-4555-b7bd-6cfccc07523c.png)
 
 ## EIGRP
+## 參考資料
+* [RIP v1與RIP v2路由協議對比分析](https://blog.xuite.net/lichangying/wretch/176501055-RIP+v1%E8%88%87RIP+v2%E8%B7%AF%E7%94%B1%E5%8D%94%E8%AD%B0%E5%B0%8D%E6%AF%94%E5%88%86%E6%9E%90)
+* [深入了解IP位址與子網路遮罩](https://www.netadmin.com.tw/netadmin/zh-tw/technology/D5162EE38674405EADB022E0802A05B2)
+* [通訊埠轉發 Port Forwarding 設定教學：如何從外面連回家中 NAS？](https://ningselect.com/30752/58/)
