@@ -4,7 +4,10 @@
 ![image](https://user-images.githubusercontent.com/62127656/137851100-e199c9ff-4d57-4c73-a706-6f95c8eb8cd7.png)
 ## RIP
 * 路由資訊協定（英語：Routing Information Protocol，縮寫：RIP）是一種內部網路關協定（IGP），為最早出現的距離向量路由協定。
-
+* 路徑表更新:
+  1. 30s 更新一次
+  2. 超過 180s 停止運作
+  3. 超過 240s 刪除路由
 ![image](https://user-images.githubusercontent.com/62127656/137854586-590eb5fa-f92b-4ebb-aaa0-0ab4e63bbcd9.png)
 ![image](https://user-images.githubusercontent.com/62127656/137855277-53f7a3ac-5d6c-44c6-bc45-454f400ceb6f.png)
 ### 實驗一
@@ -60,6 +63,10 @@ r3(config)#do show ip route
 
 ![image](https://user-images.githubusercontent.com/62127656/137866211-9ee1ff2b-f9aa-4555-b7bd-6cfccc07523c.png)
 
+* 清除
+```
+no router rip 
+```
 ## EIGRP
 ## 參考資料
 * [RIP v1與RIP v2路由協議對比分析](https://blog.xuite.net/lichangying/wretch/176501055-RIP+v1%E8%88%87RIP+v2%E8%B7%AF%E7%94%B1%E5%8D%94%E8%AD%B0%E5%B0%8D%E6%AF%94%E5%88%86%E6%9E%90)
