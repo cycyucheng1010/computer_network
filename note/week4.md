@@ -6,5 +6,6 @@
 * 路由資訊協定（英語：Routing Information Protocol，縮寫：RIP）是一種內部網路關協定（IGP），為最早出現的距離向量路由協定。
 
 ![image](https://user-images.githubusercontent.com/62127656/137854586-590eb5fa-f92b-4ebb-aaa0-0ab4e63bbcd9.png)
+![image](https://user-images.githubusercontent.com/62127656/137855277-53f7a3ac-5d6c-44c6-bc45-454f400ceb6f.png)
 
 ## EIGRP
